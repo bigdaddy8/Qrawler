@@ -1,0 +1,68 @@
+<h1>This is the results page</h1>
+<style type="text/css">	table, th, td {
+		border:1px solid black;
+	}
+	#results {
+		font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+		width:100%;
+		border-collapse:collapse;
+	}
+	#results tr.alt th {
+		font-size:1.1em;
+		text-align:left;
+		padding-top:5px;
+		padding-bottom:4px;
+		color:#000000;
+		background-color:#EAF2D3;
+	}
+</style>
+<%= link_to 'Home', requests_path%>
+<b></b>
+	<table id = results>
+	<tr class =alt >
+		<th>Title</th>
+		<th>Url</th>
+		<th>Depth</th>
+		<th>ParentID:</th>
+		<th>Header</th>
+		<th>Body</th>
+		<th>Page</th>
+		<th>Response</th>
+		<th>Links</th>
+		<th>Description</th>
+		<th>Comment</th>
+	</tr>
+
+	<% @results.each do |result| %>
+
+	<tr>
+		<td><%= result.title%></td>
+		<td><%= result.url%></td>
+		<td><%= result.depth %></td>
+		<td><%= result.parentRequest%></td>
+		<td><%= result.head%></td>
+		<td><%= result.body%></td>
+		<td><%= result.page%></td>
+		<td><%= result.respCode%></td>
+		
+		<td>
+			<%= @links = result.links%>
+			<%= result.links.each do |linkage|%>
+			<%= puts 'YAMLYAMLYAMLYAML LINK'%>
+			<%= puts YAML::dump(linkage)%>
+		
+			<%end%>
+
+		</td>
+		<td><%= result.description%></td>
+		<td><%= result.comment%></td>
+		<td></td>
+		</tr>
+	<% end %>
+</table>
+	
+	
+	
+</table>
+
+<%= link_to 'Home' ,requests_path%>

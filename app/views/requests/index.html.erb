@@ -1,0 +1,50 @@
+<h1>Listing requests</h1>
+
+<p>
+	A user makes a request based on the website they would like to get content from.
+</p>
+
+<table border =1>
+	<tr>
+		<th>Url</th>
+		<th>Depth</th>
+		<th>Issued by :</th>
+		<th>Status:</th>
+		<th>Api_Add</th>
+
+	</tr>
+
+	<% if @requests.nil?%>
+	<% puts "ERROR: requests is null"%>
+	<% else %>
+	<% @requests.each do |request| %>
+	<tr>
+		<td><%= request.url %></td>
+		<td><%= request.depth %></td>
+		<td>
+		<%= request.issuedBy %>
+		<b>User Database Not Found</b>
+		</td>
+		<% if request.status.nil?%>
+		<% request.status = 'Pending crawl command'%>
+		<% request.save%>
+		<%end%>
+		<td><%= request.status %></td>
+		<!--<td><#%=link_to 'api_add' ,api_add%></td>-->
+		<td></td>
+		<td><%= link_to 'Show', request %></td>
+		<td><%= link_to 'Edit', edit_request_path(request) %></td>
+		<td><%= link_to 'Remove', request, :confirm => 'Are you sure?', :method => :delete %></td>
+		<td><%= link_to 'Crawl',  :controller => :crawl, :action => :crawl  %></td>
+		<td><%= link_to 'Crawler Results',results_path , :controller => :result, :action => :result%></td>
+		<td><%= link_to 'Parser (beta)', parser_path , :controller => :parser, :action => :parse%></td>
+	</tr>
+	<% end %>
+	<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Request', new_request_path %>
+<%= link_to 'Back To Jobs', jobs_path%>
+

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Url:</b>
+  <%= @job.url %>
+</p>
+
+<p>
+  <b>Depth:</b>
+  <%= @job.depth %>
+</p>
+<p>
+  <b>Parent Request ID:</b>
+  <%= @job.parentRequest %>
+</p>
+
+
+<%= link_to 'Edit', edit_job_path(@job) %> |
+<%= link_to 'Done', jobs_path %>

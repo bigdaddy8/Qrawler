@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  url: MyString
+  depth: 9.99
+  status: MyString
+  issuedBy: MyString
+  ignore: MyText
+  only: MyText
+
+two:
+  url: MyString
+  depth: 9.99
+  status: MyString
+  issuedBy: MyString
+  ignore: MyText
+  only: MyText

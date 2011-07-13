@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Url:</b>
+  <%= @request.url %>
+</p>
+
+<p>
+  <b>Depth:</b>
+  <%= @request.depth %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @request.status ='Pending crawl command'%>
+</p>
+
+<p>
+  <b>Issuedby:</b>
+  <%= @request.issuedBy %>
+</p>
+<p>
+	<b>ID:</b>
+	<%= @request.id%>
+</p>
+
+
+
+<%= link_to 'Edit', edit_request_path(@request) %> |
+<%= link_to 'Done', requests_path %>

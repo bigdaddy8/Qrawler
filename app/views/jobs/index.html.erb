@@ -1,0 +1,38 @@
+<h1>Listing jobs</h1>
+<!--><h1>Hello From Shane's Rails Project</h1>-->
+<p>
+	The time is <%= Time.now%>
+</p>
+<%= link_to 'New Request', new_request_path %>
+</br>
+<%= link_to 'Existing Requests', requests_path %>
+</br>
+</br>
+</br>
+<table>
+	<tr>
+		<th>Url</th>
+		<th>Depth</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+
+	<% @jobs.each do |job| %>
+	<% @tempJobUrl = job.url%>
+	<tr>
+		<td><%= link_to job.url,job.url%></td>
+		<!--<td><a href=<%=job.url%> /td><!-->
+		<td><%= job.depth %></td>
+		
+		<td><%= link_to 'Show', job %></td>
+		<!--> <td><%= link_to 'Edit', edit_job_path(job) %></td>-->
+		<td><%= link_to 'Remove', job, :confirm => 'Are you sure?', :method => :delete %></td>
+	</tr>
+	<% end %>
+</table>
+<p>
+	<!--<%= link_to 'Crawl', :controller => :crawl, :action => :crawl  %>-->
+</p>
+<br />
+

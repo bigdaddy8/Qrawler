@@ -1,0 +1,29 @@
+<p>
+	<!--Find me in app/views/jobs/show.html.erb-->
+	<meta HTTP-EQUIV="REFRESH" content="0; url=http://127.0.0.1:8080/jobs">
+</p>
+
+<p> I dont know how you got here but you'd best leave!
+	<%= link_to 'home', jobs_path%>
+	<!--><u>
+		Jobs in queue:
+	</u>-->
+	<!-- Purpose of this code snippet is to display list of all jobs inside
+	the queue. This uses ERB-->
+	<!-->
+	<table border =1>
+		<tr><td>URL</td><td>DEPTH:</td></tr>
+		<% @jobs.each do |page| %>
+		<tr>
+			<td>
+			<%= page.url%>
+			<td/>
+			<%= page.depth%>
+		</tr>
+			<br>
+			<% end %>
+	</table>
+	<%= link_to 'jobs', jobs_path%>
+	-->
+
+</p>
