@@ -1,13 +1,3 @@
-set :application, "shanetocbot.iqcontent.com"
-set :user, "shane"
-set :port, 30000
-set :deploy_to, "/home/shane/deployment1"
-
-set:location, "shanetocbot.iqcontent.com"
-role :app, location
-role :web, location
-role :db,  location, :primary =>true
-
 
 # if you're still using the script/reaper helper you will need
 # these http://github.com/rails/irs_process_scripts
